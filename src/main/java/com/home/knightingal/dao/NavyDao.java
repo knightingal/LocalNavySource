@@ -1,6 +1,7 @@
 package com.home.knightingal.dao;
 
 import com.home.knightingal.bean.Ship;
+import com.home.knightingal.bean.ShipDetail;
 
 import java.util.List;
 
@@ -9,4 +10,6 @@ import java.util.List;
  */
 public interface NavyDao {
     List<Ship> queryShips();
+
+    List<ShipDetail> queryShipDetail(ShipDetail condition);
 }

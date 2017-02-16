@@ -1,6 +1,7 @@
 package com.home.knightingal.service;
 
 import com.home.knightingal.bean.Ship;
+import com.home.knightingal.bean.ShipDetail;
 
 import java.util.List;
 
@@ -9,4 +10,7 @@ import java.util.List;
  */
 public interface NavyService {
     List<Ship> queryShips();
+
+    List<ShipDetail> queryShipDetail(Integer shitId);
+    
 }

@@ -29,6 +29,19 @@
             local1000site_shiprepertory;
     </select>
 
-
+    <select id="queryShipDetail" resultType="ShipDetail">
+        select
+            id as id,
+            pic_name as picName,
+            pic_url as picUrl,
+            pic_description as picDescription,
+            pic_copyright as picCopyright,
+            ship_id as shipId,
+            pic_type as picType
+        from
+            local1000site_shippic
+        where
+            ship_id = #{shipId}
+    </select>
 
 </mapper>

@@ -1,6 +1,7 @@
 package com.home.knightingal.service.impl;
 
 import com.home.knightingal.bean.Ship;
+import com.home.knightingal.bean.ShipDetail;
 import com.home.knightingal.dao.NavyDao;
 import com.home.knightingal.service.NavyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,5 +18,11 @@ public class NavyServiceImpl implements NavyService {
 
     public List<Ship> queryShips() {
         return navyDao.queryShips();
+    }
+
+    public List<ShipDetail> queryShipDetail(Integer shitId) {
+        ShipDetail condition = new ShipDetail();
+        condition.setShipId(shitId);
+        return navyDao.queryShipDetail(condition);
     }
 }
