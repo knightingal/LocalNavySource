@@ -5,6 +5,7 @@ import com.home.knightingal.bean.ShipDetail;
 import com.home.knightingal.service.NavyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping(value="/navy")
 public class NavyController {
 
@@ -20,17 +21,21 @@ public class NavyController {
     NavyService navyService;
 
     @RequestMapping(value = "/index")
-    public String index() {
+    public String index(Model model) {
+        List<Ship> ships = navyService.queryShips();
+        model.addAttribute("ships", ships);
         return "index";
     }
 
     @RequestMapping(value = "/queryShips")
+    @ResponseBody
     public List<Ship> queryShips() {
         return navyService.queryShips();
     }
 
 
     @RequestMapping(value = "/queryShipDetail")
+    @ResponseBody
     public List<ShipDetail> queryShipDetail(@RequestParam(value="shipId", defaultValue="1") Integer shitId) {
         return navyService.queryShipDetail(shitId);
     }
