@@ -44,7 +44,7 @@
         <property name="typeAliasesPackage" value="com.home.knightingal.bean" />
     </bean>
 
-    <bean id="cityDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+    <bean id="navyDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface" value="com.home.knightingal.dao.NavyDao" />
         <property name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
