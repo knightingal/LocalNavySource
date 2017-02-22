@@ -17,7 +17,9 @@ import="java.util.List, com.home.knightingal.bean.Ship"
         %>
             <tr>
                 <td>
-                    <%= ships.get(i).getId() %>
+                    <a href="/NavySourceStatic/BB/20160315232552BB-27_USS_MICHIGAN/0-012623.jpg">
+                        <%= ships.get(i).getId() %>
+                    </a>
                 </td>
                 <td>
                     <%= ships.get(i).getShipName() %>
