@@ -16,8 +16,8 @@ public class NavyServiceImpl implements NavyService {
     @Autowired
     NavyDao navyDao;
 
-    public List<Ship> queryShips() {
-        return navyDao.queryShips();
+    public List<Ship> queryShips(Ship ship) {
+        return navyDao.queryShips(ship);
     }
 
     public List<ShipDetail> queryShipDetail(Integer shitId) {
